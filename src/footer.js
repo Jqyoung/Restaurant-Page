@@ -6,13 +6,16 @@ function createFooter() {
   footer.classList.add("footer");
 
   const anchor = document.createElement("a");
-  helpSetAttr(anchor, { href: "", target: "_blank" });
+  helpSetAttr(anchor, { href: "https://github.com/Jqyoung", target: "_blank" });
   const linkPara = document.createElement("p");
   linkPara.innerHTML = "Copyright &copy; 2023 Joey Young";
   anchor.appendChild(linkPara);
 
   const anchor2 = document.createElement("a");
-  helpSetAttr(anchor2, { href: "", target: "_blank" });
+  helpSetAttr(anchor2, {
+    href: "https://jqyoung.github.io/Restaurant-Page/",
+    target: "_blank",
+  });
   const githubIcon = document.createElement("img");
   helpSetAttr(githubIcon, { src: icon, alt: "github" });
   anchor2.appendChild(githubIcon);

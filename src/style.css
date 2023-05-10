@@ -247,7 +247,15 @@ a {
   color: var(--header-text-color);
   opacity: 0.5;
 }
+a > p:hover {
+  color: var(--text-color);
+}
 a > img {
   width: 1.7rem;
   vertical-align: middle;
+}
+a > img:hover {
+  transform: scale(1.3);
+  filter: sepia(1) hue-rotate(290deg) saturate(200) brightness(0.8)
+    contrast(100%);
 }
