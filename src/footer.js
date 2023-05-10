@@ -13,7 +13,7 @@ function createFooter() {
 
   const anchor2 = document.createElement("a");
   helpSetAttr(anchor2, {
-    href: "https://jqyoung.github.io/Restaurant-Page/",
+    href: "https://github.com/Jqyoung/Restaurant-Page",
     target: "_blank",
   });
   const githubIcon = document.createElement("img");
