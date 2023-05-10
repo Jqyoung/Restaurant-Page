@@ -1,0 +1,253 @@
+:root {
+  --text-color: rgb(171, 31, 31);
+  --header-text-color: rgb(237, 234, 218);
+  --header-bgclr: rgba(171, 31, 31, 0.818);
+  --div-bgclr: rgba(103, 103, 103, 0.658);
+  --grey-bgclr: rgba(41, 41, 41, 0.702);
+}
+
+@font-face {
+  font-family: "written-font";
+  src: url(./fonts/Alkatra/Alkatra-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: "formal-font";
+  src: url(./fonts/Rubik/Rubik-VariableFont_wght.ttf);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: black;
+}
+
+#content {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 1.5rem;
+  background-color: var(--header-bgclr);
+  font-family: "formal-font", sans-serif;
+  font-weight: 600;
+
+  display: grid;
+  grid-template-columns: 0.3fr min-content min-content min-content;
+  justify-items: start;
+  justify-content: center;
+  gap: 6rem;
+}
+
+.active {
+  border-bottom: 2px solid var(--header-text-color);
+}
+
+.header img {
+  width: 2.5rem;
+  /* filter: sepia(1) hue-rotate(290deg) saturate(250) contrast(65%); */
+
+  justify-self: start;
+}
+
+button {
+  background: none;
+  border-style: none;
+  outline: none;
+  cursor: pointer;
+  color: var(--header-text-color);
+  width: min-content;
+}
+
+.main-content {
+  color: var(--text-color);
+  font-family: "written-font", sans-serif;
+}
+
+/* homepage styles */
+.home {
+  text-align: center;
+  width: 100%;
+  flex: 1;
+  background: url(./images/background.jpg) 600% 50%/98% no-repeat;
+  padding-top: 4rem;
+}
+
+h1 {
+  font-size: 5rem;
+}
+.home p {
+  font-size: 1.5rem;
+}
+.order {
+  font-size: 1.5rem;
+  width: fit-content;
+  padding: 10px 30px;
+  background-color: var(--text-color);
+  margin-top: 50px;
+  border-radius: 5px;
+}
+
+/* menu page styles */
+.menu {
+  width: 70%;
+  margin-bottom: 1rem;
+  background-color: var(--grey-bgclr);
+  padding: 3rem 3rem 0 3rem;
+  border-radius: 0 0 10px 10px;
+}
+.menu-category {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+.menu-category > h2 {
+  grid-column: 1/3;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: -1rem;
+}
+
+.menu-category > div {
+  background-color: var(--div-bgclr);
+  display: grid;
+  grid-template-columns: min-content 1fr min-content;
+  grid-template-rows: min-content 1fr;
+  grid-template-areas:
+    "img title price"
+    "img description description";
+  align-items: center;
+  color: var(--header-text-color);
+  border-radius: 10px;
+
+  padding: 15px 15px 15px 15px;
+}
+.menu-category > div > img {
+  grid-area: img;
+  width: 12rem;
+  margin-right: 1.5rem;
+  border-radius: 10px;
+}
+.menu-category > div > h3 {
+  grid-area: title;
+  font-size: 1.5rem;
+  border-bottom: 1px solid;
+  border-image: linear-gradient(
+      to right,
+      var(--header-text-color) 65%,
+      transparent
+    )
+    1;
+}
+.menu-category > div > .description {
+  grid-area: description;
+  font-size: 1.1rem;
+  text-align: justify;
+  align-self: start;
+}
+.menu-category > div > .price {
+  grid-area: price;
+}
+
+/*Contact page styles */
+.contact {
+  display: grid;
+  grid-template-columns: min-content fit-content 1fr;
+  grid-template-areas:
+    "phoneIcon phone map"
+    "hoursIcon hours map"
+    "addressIcon address map";
+  font-size: 1.2rem;
+  color: var(--header-text-color);
+  font-family: "formal-font", sans-serif;
+  align-items: center;
+  column-gap: 8px;
+  background-color: var(--div-bgclr);
+  margin-top: auto;
+  padding: 60px 20px;
+  border-radius: 10px;
+}
+
+.contact > img:not(.map) {
+  width: 1.2rem;
+  filter: invert(1);
+}
+
+.contact:first-child {
+  grid-area: phoneIcon;
+  width: 1rem;
+}
+.phone {
+  grid-area: phone;
+}
+
+.contact > img:nth-of-type(2) {
+  grid-area: hoursIcon;
+}
+.hours {
+  grid-area: hours;
+}
+.hours::after {
+  content: "\a Fri - Sun: 10am-10pm ";
+  white-space: pre;
+}
+
+.contact > img:nth-of-type(3) {
+  grid-area: addressIcon;
+}
+.address {
+  grid-area: address;
+}
+.address:after {
+  content: "\a Salt Lake City, Utah 88888 \a USA";
+  white-space: pre;
+}
+
+.map {
+  grid-area: map;
+  width: 30rem;
+  margin-left: 30px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: auto;
+  padding: 5px 0;
+
+  width: 100%;
+}
+a {
+  font-family: "formal-font", sans-serif;
+  text-decoration: none;
+  color: var(--header-text-color);
+  opacity: 0.5;
+}
+a > img {
+  width: 1.7rem;
+  vertical-align: middle;
+}
